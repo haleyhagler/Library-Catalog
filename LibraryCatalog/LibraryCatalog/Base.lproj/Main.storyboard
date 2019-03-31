@@ -976,11 +976,183 @@
                         <outlet property="bookTitleTextInput" destination="cFH-Rm-1G7" id="xXc-tJ-zQt"/>
                         <outlet property="isbnTextInput" destination="GqE-Sw-5eD" id="Dbg-yW-Son"/>
                         <outlet property="tableView" destination="VUI-Nk-Kdn" id="elJ-PR-Jeq"/>
+                        <segue destination="zCZ-Af-ZAQ" kind="show" identifier="toBookInfo" id="Niw-gW-xOT"/>
                     </connections>
                 </viewController>
                 <customObject id="LoW-eQ-eFd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="823.5" y="502"/>
+        </scene>
+        <!--Book Info View Controller-->
+        <scene sceneID="JkU-pd-JBy">
+            <objects>
+                <viewController id="zCZ-Af-ZAQ" customClass="BookInfoViewController" customModule="LibraryCatalog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="dpn-3b-LrV">
+                        <rect key="frame" x="0.0" y="0.0" width="352" height="189"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2KL-Ve-2wC">
+                                <rect key="frame" x="20" y="57" width="312" height="112"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CLd-bH-OJV">
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="112"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CLd-bH-OJV" secondAttribute="height" multiplier="3:4" id="pW0-tg-CRk"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="bookCover" id="4C5-6x-ijq"/>
+                                    </imageView>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="11" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eBY-nK-wLe">
+                                        <rect key="frame" x="94" y="0.0" width="218" height="112"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="baR-w7-FP6">
+                                                <rect key="frame" x="-2" y="88" width="222" height="24"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="Title" id="vGw-Jg-EfJ">
+                                                    <font key="font" metaFont="system" size="20"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lyb-rq-09O">
+                                                <rect key="frame" x="-2" y="60" width="222" height="17"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="Author" id="mYc-gj-trW">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="996-K2-0Pv">
+                                                <rect key="frame" x="0.0" y="32" width="218" height="17"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sMA-HS-Xxi">
+                                                        <rect key="frame" x="-2" y="0.0" width="108" height="17"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="Published Date" id="gpv-FW-zLe">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cs1-xI-h2b">
+                                                        <rect key="frame" x="112" y="0.0" width="108" height="17"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="Rating" id="m7I-6P-tD5">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="cs1-xI-h2b" secondAttribute="trailing" id="0WN-6W-oQS"/>
+                                                    <constraint firstItem="sMA-HS-Xxi" firstAttribute="top" secondItem="996-K2-0Pv" secondAttribute="top" id="8Au-Od-4Pf"/>
+                                                    <constraint firstItem="sMA-HS-Xxi" firstAttribute="leading" secondItem="996-K2-0Pv" secondAttribute="leading" id="JyT-dO-qkN"/>
+                                                    <constraint firstItem="cs1-xI-h2b" firstAttribute="width" secondItem="sMA-HS-Xxi" secondAttribute="width" id="ToR-z8-PxD"/>
+                                                    <constraint firstAttribute="bottom" secondItem="sMA-HS-Xxi" secondAttribute="bottom" id="ZNm-0o-azZ"/>
+                                                    <constraint firstItem="cs1-xI-h2b" firstAttribute="top" secondItem="996-K2-0Pv" secondAttribute="top" id="ZW7-ff-CpQ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cs1-xI-h2b" secondAttribute="bottom" id="hjP-vr-gEK"/>
+                                                </constraints>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
+                                            <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="112" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YmT-AK-hCH">
+                                                <rect key="frame" x="0.0" y="0.0" width="218" height="21"/>
+                                                <subviews>
+                                                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4bG-mc-adj">
+                                                        <rect key="frame" x="-2" y="-3" width="77" height="25"/>
+                                                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="eep-rv-L9G" id="2dA-Vn-BWh">
+                                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="menu"/>
+                                                            <menu key="menu" id="uWD-rO-mgc">
+                                                                <items>
+                                                                    <menuItem title="Item 1" state="on" id="eep-rv-L9G"/>
+                                                                    <menuItem title="Item 2" id="j9r-ss-raU"/>
+                                                                    <menuItem title="Item 3" id="lUB-ZN-Te0"/>
+                                                                </items>
+                                                            </menu>
+                                                        </popUpButtonCell>
+                                                    </popUpButton>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lNb-Va-8kN">
+                                                        <rect key="frame" x="184" y="-1" width="34" height="23"/>
+                                                        <buttonCell key="cell" type="smallSquare" title="ADD" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oT0-ce-BKu">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                    </button>
+                                                </subviews>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="YmT-AK-hCH" firstAttribute="width" secondItem="baR-w7-FP6" secondAttribute="width" id="mmG-ov-8mZ"/>
+                                            <constraint firstItem="996-K2-0Pv" firstAttribute="width" secondItem="baR-w7-FP6" secondAttribute="width" id="vEB-QG-vyC"/>
+                                            <constraint firstItem="Lyb-rq-09O" firstAttribute="width" secondItem="baR-w7-FP6" secondAttribute="width" id="wNH-tf-jo6"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eBY-nK-wLe" firstAttribute="height" secondItem="CLd-bH-OJV" secondAttribute="height" id="Zu8-Ah-4x2"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="1Pq-nU-w7u">
+                                <rect key="frame" x="18" y="20" width="316" height="17"/>
+                                <textFieldCell key="cell" selectable="YES" placeholderString="Book Description" id="tCA-PF-oYc">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="1Pq-nU-w7u" secondAttribute="bottom" constant="20" id="7r4-kl-CwP"/>
+                            <constraint firstItem="2KL-Ve-2wC" firstAttribute="top" secondItem="dpn-3b-LrV" secondAttribute="top" constant="20" id="9xK-SK-Pdk"/>
+                            <constraint firstItem="1Pq-nU-w7u" firstAttribute="top" secondItem="2KL-Ve-2wC" secondAttribute="bottom" constant="20" id="BML-As-bZj"/>
+                            <constraint firstAttribute="trailing" secondItem="2KL-Ve-2wC" secondAttribute="trailing" constant="20" id="F9p-SV-WAP"/>
+                            <constraint firstItem="2KL-Ve-2wC" firstAttribute="leading" secondItem="dpn-3b-LrV" secondAttribute="leading" constant="20" id="Q8g-l6-52f"/>
+                            <constraint firstAttribute="trailing" secondItem="1Pq-nU-w7u" secondAttribute="trailing" constant="20" id="ets-Q1-CyE"/>
+                            <constraint firstItem="1Pq-nU-w7u" firstAttribute="leading" secondItem="dpn-3b-LrV" secondAttribute="leading" constant="20" id="nIN-qu-5lv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="authorLable" destination="Lyb-rq-09O" id="rAE-iY-5n0"/>
+                        <outlet property="coverImage" destination="CLd-bH-OJV" id="use-Ba-mpX"/>
+                        <outlet property="descriptionLable" destination="1Pq-nU-w7u" id="1u7-IJ-YQq"/>
+                        <outlet property="titleLable" destination="baR-w7-FP6" id="gZm-Bq-klU"/>
+                    </connections>
+                </viewController>
+                <customObject id="080-5e-Xju" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1470" y="394"/>
         </scene>
     </scenes>
     <resources>

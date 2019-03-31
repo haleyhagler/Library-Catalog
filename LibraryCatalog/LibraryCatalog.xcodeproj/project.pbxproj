@@ -14,6 +14,7 @@
 		59EB2446224F0E8A006E9BB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59EB2444224F0E8A006E9BB1 /* Main.storyboard */; };
 		59EB244F224F142E006E9BB1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EB244E224F142E006E9BB1 /* SearchViewController.swift */; };
 		59EB245B224F19C8006E9BB1 /* bookCover.png in Resources */ = {isa = PBXBuildFile; fileRef = 59EB245A224F19C8006E9BB1 /* bookCover.png */; };
+		59EB245D22503878006E9BB1 /* BookInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EB245C22503878006E9BB1 /* BookInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		59EB2448224F0E8A006E9BB1 /* LibraryCatalog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LibraryCatalog.entitlements; sourceTree = "<group>"; };
 		59EB244E224F142E006E9BB1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		59EB245A224F19C8006E9BB1 /* bookCover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookCover.png; sourceTree = "<group>"; };
+		59EB245C22503878006E9BB1 /* BookInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoViewController.swift; sourceTree = "<group>"; };
 		7A25AB347D07427C823449FE /* Pods-LibraryCatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibraryCatalog.debug.xcconfig"; path = "Target Support Files/Pods-LibraryCatalog/Pods-LibraryCatalog.debug.xcconfig"; sourceTree = "<group>"; };
 		9B4587BF8DCF9E160656158D /* Pods-LibraryCatalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibraryCatalog.release.xcconfig"; path = "Target Support Files/Pods-LibraryCatalog/Pods-LibraryCatalog.release.xcconfig"; sourceTree = "<group>"; };
 		F857827F1C313E8A86BD2885 /* Pods_LibraryCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibraryCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 				59EB243E224F0E89006E9BB1 /* AppDelegate.swift */,
 				59EB2440224F0E89006E9BB1 /* ViewController.swift */,
 				59EB244E224F142E006E9BB1 /* SearchViewController.swift */,
+				59EB245C22503878006E9BB1 /* BookInfoViewController.swift */,
 				59EB2442224F0E8A006E9BB1 /* Assets.xcassets */,
 				59EB2444224F0E8A006E9BB1 /* Main.storyboard */,
 				59EB2447224F0E8A006E9BB1 /* Info.plist */,
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59EB244F224F142E006E9BB1 /* SearchViewController.swift in Sources */,
+				59EB245D22503878006E9BB1 /* BookInfoViewController.swift in Sources */,
 				59EB2441224F0E89006E9BB1 /* ViewController.swift in Sources */,
 				59EB243F224F0E89006E9BB1 /* AppDelegate.swift in Sources */,
 			);

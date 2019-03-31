@@ -131,15 +131,15 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
     }
 
 
-//    func tableViewSelectionDidChange(_ notification: Notification) {
-//        selectedIndex = self.tableView.selectedRow
-//        self.performSegue(withIdentifier: "bookDetail", sender: self)
-//    }
-//    
-//    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-//        let secondViewController = segue.destinationController as! BookViewController
-//        secondViewController.receivedData = data[selectedIndex]
-//    }
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        selectedIndex = self.tableView.selectedRow
+        self.performSegue(withIdentifier: "toBookInfo", sender: self)
+    }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        let secondViewController = segue.destinationController as! BookInfoViewController
+        secondViewController.receivedData = data[selectedIndex]
+    }
 }
 
 class BookTableCell : NSTableCellView {
