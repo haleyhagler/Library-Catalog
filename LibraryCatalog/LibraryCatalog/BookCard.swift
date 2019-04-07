@@ -11,36 +11,40 @@ import SwiftyJSON
 
 class BookCard{
 
-    var kind : String
-    var id : String
-    var etag : String
+    var kind : String = ""
+    var id : String = ""
+    var etag : String = ""
 
-    var title : String
-    var authors : [String]
-    var publisher : String
-    var publishedDate : String
-    var description : String
+    var title : String = ""
+    var authors : [String] = [""]
+    var publisher : String = ""
+    var publishedDate : String = ""
+    var description : String = ""
 
-    var ISBN_13 : Int
-    var ISBN_10 : Int
+    var ISBN_13 : Int = -1
+    var ISBN_10 : Int = -1
 
-    var pageCount : Int
-    var printType : String
-    var categories : [String]
+    var pageCount : Int = -1
+    var printType : String = ""
+    var categories : [String] = [""]
 
-    var averageRating : Int
-    var ratingsCount : Int
-    var maturityRating : String
+    var averageRating : Int = -1
+    var ratingsCount : Int = -1
+    var maturityRating : String = ""
 
-    var smallThumbnail : String
-    var thumbnail : String
+    var smallThumbnail : String = ""
+    var thumbnail : String = ""
 
-    var language : String
+    var language : String = ""
 //    var previewLink : String
 //    var infoLink : String
 //    var canonicalVolumeLink : String
 
 
+    init(){
+        
+    }
+    
     init(json : JSON) {
         kind = json["kind"].string!
         id = json["id"].string!

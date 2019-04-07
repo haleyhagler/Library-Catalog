@@ -20,7 +20,7 @@ class BookInfoViewController: NSViewController {
     @IBOutlet weak var descriptionLable: NSTextField!
     
     
-//    var receivedData : BookCard = 0
+    var receivedData = BookCard()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +44,16 @@ class BookInfoViewController: NSViewController {
 //                self.coverImage.image = image
 //            }
 //        }
+        titleLable.stringValue = receivedData.title
+        authorLable.stringValue = fromVector(vector: receivedData.authors)
+        Alamofire.request(receivedData.smallThumbnail, method: .get).responseImage { response in
+            guard let image = response.result.value else {
+                self.coverImage.image = NSImage(named: "bookCover.png")
+                
+                return
+            }
+            self.coverImage.image = image
+        }
         
     }
     
