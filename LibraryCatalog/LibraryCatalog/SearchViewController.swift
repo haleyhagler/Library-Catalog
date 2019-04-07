@@ -110,6 +110,8 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
             
             cell.title.stringValue = item.title
             cell.author.stringValue = fromVector(vector: item.authors)
+            cell.publishedDate.stringValue = item.publishedDate
+            cell.rating.intValue = Int32(item.averageRating)
             Alamofire.request(item.smallThumbnail, method: .get).responseImage { response in
                 guard let image = response.result.value else {
                     cell.cover.image = NSImage(named: "bookCover.png")
