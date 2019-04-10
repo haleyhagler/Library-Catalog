@@ -5,7 +5,7 @@
 //  Created by Haley Hagler on 3/30/19.
 //  Copyright © 2019 Haley Hagler. All rights reserved.
 //
-import Foundation
+
 import Cocoa
 import Alamofire
 import AlamofireImage

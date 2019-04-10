@@ -30,6 +30,7 @@ class BookCard{
 
     var averageRating : Int = -1
     var ratingsCount : Int = -1
+    var stringRating : String = ""
     var maturityRating : String = ""
 
     var smallThumbnail : String = ""
@@ -68,6 +69,7 @@ class BookCard{
         categories = toVector(json: json["volumeInfo"]["categories"])
 
         averageRating = checkNullInt(json : json["volumeInfo"]["averageRating"])
+        stringRating = rating(r: averageRating)
         ratingsCount = checkNullInt(json : json["volumeInfo"]["ratingsCount"])
         maturityRating = checkNullString(json : json["volumeInfo"]["maturityRating"])
         
@@ -110,4 +112,21 @@ func checkNullString(json : JSON) -> String{
 func checkNullInt(json : JSON) -> Int{
     if json == JSON.null { return -1 }
     else { return json.int! }
+}
+
+func rating(r : Int) -> String{
+    var output : String = ""
+    if r == -1 || r == 0 { output = "☆☆☆☆☆" }
+    else{
+        var i = 0
+        while i < r{
+            output += "★"
+            i += 1
+        }
+        while i < 5{
+            output += "☆"
+            i += 1
+        }
+    }
+    return output
 }
