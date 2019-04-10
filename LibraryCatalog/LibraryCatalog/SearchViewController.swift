@@ -22,7 +22,7 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
     /////////////////////////////////////////// Global Variables
     
     //var data : [[String: String]] = []
-    var data : [JSON] = []
+    var data : [BookCard] = []
     var selectedIndex : Int = -1            // Not sure if nessaray
     
     ///////////////////////////////////////////  IBOutlets
@@ -48,7 +48,6 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
         }
     }
     
-    /////////////////////////////////////////// IBActions
     // MARK:    SEARCH BUTTON
     
     @IBAction func searchButton(_ sender: Any) {
@@ -90,13 +89,13 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
         } else { return "" }
     }
     
-    /////////////////////////////////////////// TABEL VIEW FUCNTIONS
     // MARK: TABEL VIEW FUCNTIONS
     
     func populateData(json : JSON){
         var i  = 0
         while json["items"][i]["volumeInfo"] != JSON.null {
-            data.append(json["items"][i]["volumeInfo"])
+            let book : BookCard = BookCard(json : json["items"][i])
+            data.append(book)
             i += 1
         }
     }
@@ -106,24 +105,21 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView?{
         let item = data[row]
     
-        if item["title"].string != nil {
+        if item.title != "" {
             let cell : BookTableCell = (tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? BookTableCell)!
             
-            cell.title.stringValue = item["title"].string!
-            if item["authors"][0].string == nil {
-                cell.author.isHidden = true
-            } else { cell.author.stringValue = item["authors"][0].string! }
-            if item["imageLinks"]["smallThumbnail"].string == nil {
-                cell.cover.image = NSImage(named: "bookCover.png")
-            }else{
-                Alamofire.request(item["imageLinks"]["smallThumbnail"].string!, method: .get).responseImage { response in
-                    guard let image = response.result.value else {
-                        cell.cover.image = NSImage(named: "bookCover.png")
-                        
-                        return
-                    }
-                    cell.cover.image = image
+            cell.title.stringValue = item.title
+            cell.author.stringValue = fromVector(vector: item.authors)
+            cell.publishedDate.stringValue = item.publishedDate
+            cell.rating.stringValue = item.stringRating
+      
+            Alamofire.request(item.smallThumbnail, method: .get).responseImage { response in
+                guard let image = response.result.value else {
+                    cell.cover.image = NSImage(named: "bookCover.png")
+                    
+                    return
                 }
+                cell.cover.image = image
             }
             return cell
         } else { return nil }
