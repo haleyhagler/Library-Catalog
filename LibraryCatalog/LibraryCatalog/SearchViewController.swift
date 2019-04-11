@@ -12,7 +12,14 @@ import SwiftyJSON
 import AlamofireImage
 
 class SearchViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
-
+    
+    // TODO:    Create barcode scanner
+    // TODO:    Pagentation -> Add Load More results  
+    // TODO:    Loading Screan/Wheel !!!
+    // TODO:    Alert user when there is no internet connection
+    // TODO:    Alert user when there are no results
+    
+    
     /////////////////////////////////////////// URL Constants
     
     let API_books : String = "AIzaSyAMfBSt5KiuHQE2VgycO0bz6reABBdyhcc"
@@ -21,7 +28,6 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
     
     /////////////////////////////////////////// Global Variables
     
-    //var data : [[String: String]] = []
     var data : [BookCard] = []
     var selectedIndex : Int = -1            // Not sure if nessaray
     
@@ -30,6 +36,7 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
     @IBOutlet weak var bookTitleTextInput: NSTextField!
     @IBOutlet weak var authorTextInput: NSTextField!
     @IBOutlet weak var isbnTextInput: NSTextField!
+    @IBOutlet weak var subjectTextInput: NSTextField!
     @IBOutlet weak var tableView: NSTableView!
     
     ///////////////////////////////////////////
@@ -51,19 +58,31 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
     // MARK:    SEARCH BUTTON
     
     @IBAction func searchButton(_ sender: Any) {
-    
-        let bookTitle = bookTitleTextInput.stringValue
-        let author = authorTextInput.stringValue
+        
+        let bookTitle = ["id" : "intitle",
+                         "string" : bookTitleTextInput.stringValue.replacingOccurrences(of: " ", with: "+") ]
+        let author = ["id" : "inauthor",
+                      "string" : authorTextInput.stringValue.replacingOccurrences(of: " ", with: "+")  ]
+        let isbn = ["id" : "isbn",
+                    "string" : isbnTextInput.stringValue.replacingOccurrences(of: " ", with: "+") ]
+        let subject = ["id" : "subject",
+                       "string" : subjectTextInput.stringValue.replacingOccurrences(of: " ", with: "+") ]
+        
+        let searchTerms = [bookTitle, author, isbn, subject]
+        
         var currentURL = URL
-
+        
         data.removeAll()           // Clears Data from Last Search
 
         //////////////////// Create URL
 
-        currentURL += prepareForURL(input: bookTitle, url: "intitle")
-        if bookTitle != "" && author != ""{ currentURL += "+" }
-        currentURL += prepareForURL(input: author, url: "inauthor")
-        currentURL += "&key=\(API_books)"
+        for term in searchTerms{
+          if term["string"] != ""{
+            currentURL += "\(String(describing: term["id"]!)):\(String(describing: term["string"]!))+"
+            }
+        }
+        currentURL = String(currentURL.dropLast())
+        currentURL += "&maxResults=25&key=\(API_books)"
         print("URL: \(currentURL)")
 
         //////////////////// Grab JSON from URL
@@ -73,20 +92,24 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
             if response.result.isSuccess {
                 // print("Success! Got the book data")
                 let bookJSON : JSON = JSON(response.result.value!)      // Grabs Data from google books
+                var items = bookJSON["totalItems"]
                 self.populateData(json: bookJSON)                       // Makes vector with each book
                 self.tableView.reloadData()                             // Creates Table
+                print(items)
                 //print(bookJSON)
             }
             else { print("Error \(response.result.error!)") }           // In Case of Error
         }
+        
+        clearInputs()
+        
     }
     
-    // sets up inputs for the url
-    
-    func prepareForURL( input : String, url : String ) -> String {
-        if input != ""{
-            return "\(url):\(input.replacingOccurrences(of: " ", with: "+"))"
-        } else { return "" }
+    func clearInputs(){
+        bookTitleTextInput.stringValue = ""
+        authorTextInput.stringValue = ""
+        isbnTextInput.stringValue = ""
+        subjectTextInput.stringValue = ""
     }
     
     // MARK: TABEL VIEW FUCNTIONS

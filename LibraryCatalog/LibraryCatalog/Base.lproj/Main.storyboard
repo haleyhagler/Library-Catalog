@@ -724,17 +724,17 @@
             <objects>
                 <viewController title="Book Search" id="Y75-do-T7K" customClass="SearchViewController" customModule="LibraryCatalog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" id="opV-E5-Oit">
-                        <rect key="frame" x="0.0" y="0.0" width="651" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="705" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mua-fQ-ng8">
-                                <rect key="frame" x="20" y="20" width="611" height="360"/>
+                                <rect key="frame" x="20" y="20" width="665" height="360"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2vZ-Wk-1lt">
-                                        <rect key="frame" x="0.0" y="242" width="197" height="118"/>
+                                        <rect key="frame" x="0.0" y="210" width="215" height="150"/>
                                         <subviews>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cFH-Rm-1G7">
-                                                <rect key="frame" x="0.0" y="96" width="197" height="22"/>
+                                                <rect key="frame" x="0.0" y="128" width="215" height="22"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Book Title" drawsBackground="YES" id="BZA-Qb-I7u">
                                                     <font key="font" usesAppearanceFont="YES"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -742,7 +742,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mJW-ox-TW2">
-                                                <rect key="frame" x="0.0" y="64" width="197" height="22"/>
+                                                <rect key="frame" x="0.0" y="96" width="215" height="22"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Author" drawsBackground="YES" id="OTi-vI-EEL">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -750,15 +750,23 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GqE-Sw-5eD">
-                                                <rect key="frame" x="0.0" y="32" width="197" height="22"/>
+                                                <rect key="frame" x="0.0" y="64" width="215" height="22"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="ISBN" drawsBackground="YES" id="180-fn-azu">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
+                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UWe-dB-VOA">
+                                                <rect key="frame" x="0.0" y="32" width="197" height="22"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Subject" drawsBackground="YES" id="FZp-Ic-a9g">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IKc-6a-bSP">
-                                                <rect key="frame" x="0.0" y="-1" width="197" height="24"/>
+                                                <rect key="frame" x="0.0" y="-1" width="215" height="24"/>
                                                 <buttonCell key="cell" type="smallSquare" title="Search" bezelStyle="smallSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qJh-CU-t8h">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -784,8 +792,10 @@
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
@@ -793,19 +803,19 @@
                                         </customSpacing>
                                     </stackView>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="93" horizontalPageScroll="10" verticalLineScroll="93" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqV-zf-R3t">
-                                        <rect key="frame" x="217" y="0.0" width="394" height="360"/>
+                                        <rect key="frame" x="235" y="0.0" width="430" height="360"/>
                                         <clipView key="contentView" id="ToT-mc-nZq">
-                                            <rect key="frame" x="1" y="0.0" width="392" height="359"/>
+                                            <rect key="frame" x="1" y="0.0" width="428" height="359"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="91" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" headerView="mQp-mc-aiD" viewBased="YES" id="VUI-Nk-Kdn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="392" height="334"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="428" height="334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn width="389" minWidth="40" maxWidth="1000" id="hgL-zs-rgF">
+                                                        <tableColumn width="425" minWidth="40" maxWidth="1000" id="hgL-zs-rgF">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -819,7 +829,7 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView misplaced="YES" id="hHD-Yu-Cae" customClass="BookTableCell" customModule="LibraryCatalog" customModuleProvider="target">
-                                                                    <rect key="frame" x="1" y="1" width="389" height="91"/>
+                                                                    <rect key="frame" x="1" y="1" width="425" height="91"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WUG-dW-3ye">
@@ -831,10 +841,10 @@
                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="bookCover" id="rgt-R7-7lc"/>
                                                                         </imageView>
                                                                         <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="18" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uua-yg-7he">
-                                                                            <rect key="frame" x="79" y="5" width="310" height="90"/>
+                                                                            <rect key="frame" x="79" y="5" width="346" height="90"/>
                                                                             <subviews>
                                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ux-Mr-cCF">
-                                                                                    <rect key="frame" x="-2" y="70" width="314" height="20"/>
+                                                                                    <rect key="frame" x="-2" y="70" width="350" height="20"/>
                                                                                     <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="Title" id="TLO-19-tiW">
                                                                                         <font key="font" metaFont="system"/>
                                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -842,7 +852,7 @@
                                                                                     </textFieldCell>
                                                                                 </textField>
                                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gWn-JP-FEq">
-                                                                                    <rect key="frame" x="-2" y="35" width="314" height="17"/>
+                                                                                    <rect key="frame" x="-2" y="35" width="350" height="17"/>
                                                                                     <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="Author" id="MZM-7d-4EH">
                                                                                         <font key="font" metaFont="system"/>
                                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -850,10 +860,10 @@
                                                                                     </textFieldCell>
                                                                                 </textField>
                                                                                 <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="12" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KrZ-yD-R0w">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="17"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="346" height="17"/>
                                                                                     <subviews>
                                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ewT-Fg-CMD">
-                                                                                            <rect key="frame" x="-2" y="0.0" width="153" height="17"/>
+                                                                                            <rect key="frame" x="-2" y="0.0" width="171" height="17"/>
                                                                                             <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="Published Date" id="szb-yh-rfP">
                                                                                                 <font key="font" metaFont="system"/>
                                                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -861,7 +871,7 @@
                                                                                             </textFieldCell>
                                                                                         </textField>
                                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9xo-Co-fhd">
-                                                                                            <rect key="frame" x="159" y="0.0" width="153" height="17"/>
+                                                                                            <rect key="frame" x="177" y="0.0" width="171" height="17"/>
                                                                                             <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="Rating" id="1U5-OK-EBG">
                                                                                                 <font key="font" metaFont="system"/>
                                                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -938,7 +948,7 @@
                                         </clipView>
                                         <edgeInsets key="contentInsets" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                         <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="0Xj-JB-kg5">
-                                            <rect key="frame" x="1" y="343" width="358" height="16"/>
+                                            <rect key="frame" x="1" y="343" width="427" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="sfc-F6-4aB">
@@ -946,7 +956,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <tableHeaderView key="headerView" wantsLayer="YES" id="mQp-mc-aiD">
-                                            <rect key="frame" x="0.0" y="0.0" width="392" height="25"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
@@ -975,6 +985,7 @@
                         <outlet property="authorTextInput" destination="mJW-ox-TW2" id="WXY-fq-7jF"/>
                         <outlet property="bookTitleTextInput" destination="cFH-Rm-1G7" id="xXc-tJ-zQt"/>
                         <outlet property="isbnTextInput" destination="GqE-Sw-5eD" id="Dbg-yW-Son"/>
+                        <outlet property="subjectTextInput" destination="UWe-dB-VOA" id="z5u-1L-yEd"/>
                         <outlet property="tableView" destination="VUI-Nk-Kdn" id="elJ-PR-Jeq"/>
                         <segue destination="zCZ-Af-ZAQ" kind="show" identifier="toBookInfo" id="Niw-gW-xOT"/>
                     </connections>
