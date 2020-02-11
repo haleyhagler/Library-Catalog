@@ -22,8 +22,8 @@ class SearchViewController: NSViewController, NSTableViewDataSource, NSTableView
     
     /////////////////////////////////////////// URL Constants
     
-    let API_books : String = "AIzaSyAMfBSt5KiuHQE2VgycO0bz6reABBdyhcc"
-    let project : String = "com.HaleyHagler.Bookshelf"
+    let API_books : String = "."
+    let project : String = "."
     let URL : String = "https://www.googleapis.com/books/v1/volumes?q="
     
     /////////////////////////////////////////// Global Variables
